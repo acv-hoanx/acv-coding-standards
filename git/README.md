@@ -10,7 +10,8 @@ Flow tham khảo: [A successful Git branching model](http://nvie.com/posts/a-suc
 * Mỗi pull-request tương ứng với một feature issue.
 * Mỗi một pull-request không hạn chế số lượng commit
 * Pull-request title phải đặt đúng quy định: `[issueType] #[ID issue] [Nội dung issue]` 
- （Ví dụ: `bug #WEPAPP-154 Tổng hợp bug trên web`）.
+
+    （Ví dụ: `bug #WEPAPP-154 Tổng hợp bug trên web`）.
  
   Tuy nhiên với trường hợp 1 pull-request có chứa nhiêù commit thì cần phải ghi rõ trong nội dung pull request là trong commit đó xử lý đối ứng vấn đề gì.
   
@@ -20,20 +21,24 @@ Flow tham khảo: [A successful Git branching model](http://nvie.com/posts/a-suc
                 * `Làm abc xyz`
                 * `fixbug efg tuv `
                 
-* Đối với commit messages phải đặt đúng quy định: `[issueType] #[ID issue] [Nội dung issue]` （Ví dụ: `bug #WEPAPP-154 Tổng hợp bug trên web`）.
+* Đối với commit messages phải đặt đúng quy định: `[issueType] #[ID issue] [Nội dung issue]` 
+
+    （Ví dụ: `bug #WEPAPP-154 Tổng hợp bug trên web`）.
 * Tại môi trường local(trên máy lập trình viên), tuyệt đối không được thay đổi code khi ở branch master, develop. Nhất định phải thao tác trên branch khởi tạo để làm task.
 * Trước khi push và tạo pull request bắt buộc phải rebase develop hoặc master để lấy code mới nhất.
+
     **Cách rebase hiệu quả.**
     1. Đối với trường hợp code xong mà chưa commit  push lên origin
-        1.1 Sau khi checkout branch feature mới và code xong rồi thì thực hiện add những file thay đổi vào stash
-        1.2 Thực hiện pull develop  rebase `develop` vào branch feature đang phát triển
-        1.3 Thực hiện apply stash đã lưu ở 1.1 (Nếu có conflict thì sửa)
-        1.4 Commit file thay đổi và push lên branch feature đó
-        1.5 Tạo pull request và assign cho người review là done.
+        * Sau khi checkout branch feature mới và code xong rồi thì thực hiện add những file thay đổi vào stash
+        * Thực hiện pull develop  rebase `develop` vào branch feature đang phát triển
+        * Thực hiện apply stash đã lưu ở 1.1 (Nếu có conflict thì sửa)
+        * Commit file thay đổi và push lên branch feature đó
+        * Tạo pull request và assign cho người review là done.
+        
     2. Đối với trường hợp code xong rồi commit và push lên origin mà quên ko rebase
-        2.1 Thực hiện pull develop và rebase `develop` vào branch feature đang phát triển
-        2.2 Nếu có conflict thì thực hiện resolve conflict (như hướng dẫn bên dưới)
-        2.3 Sau khi rebase xong thực hiện commit file có thay đổi đồng thời force push lên branch tương ứng.
+        * Thực hiện pull develop và rebase `develop` vào branch feature đang phát triển
+        * Nếu có conflict thì thực hiện resolve conflict (như hướng dẫn bên dưới)
+        * Sau khi rebase xong thực hiện commit file có thay đổi đồng thời force push lên branch tương ứng.
 * Đặt tên branch: 
   1. Mỗi 1 task thì đặt tên như sau: `feature/#[ID issue]`
         * Ví dụ: Task có id `WEPAPP-169` thì đặt tên branch như sau: `feature/#169`
