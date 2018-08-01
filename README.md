@@ -1,4 +1,4 @@
-## ACV's coding standard
+# ACV's coding standard
 
 - [PHP](./php)
 - [git](./git)
