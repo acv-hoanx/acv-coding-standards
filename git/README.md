@@ -1,8 +1,8 @@
-## ACV Git flow
+# ACV Git flow
 
 Flow tham khảo: [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)
 
-### Nguyên tắc
+## Nguyên tắc
 * Branch master - là branch sẽ release cho khách hàng, deploy production.
 * Branch develop - là branch chính để phát triển, deploy test.
 * 2 branch master và develop phải config protection 
@@ -34,7 +34,7 @@ Flow tham khảo: [A successful Git branching model](http://nvie.com/posts/a-suc
         * Thực hiện apply stash đã lưu ở 1.1 (Nếu có conflict thì sửa)
         * Commit file thay đổi và push lên branch feature đó
         * Tạo pull request và assign cho người review là done.
-        
+
     2. Đối với trường hợp code xong rồi commit và push lên origin mà quên ko rebase
         * Thực hiện pull develop và rebase `develop` vào branch feature đang phát triển
         * Nếu có conflict thì thực hiện resolve conflict (như hướng dẫn bên dưới)
@@ -46,11 +46,10 @@ Flow tham khảo: [A successful Git branching model](http://nvie.com/posts/a-suc
   2. Mỗi 1 task hotfix sau khi đã release thì đặt tên như sau: `hotfix/#[ID issue]`
 
 
-### Quy trình
+## Quy trình
 
-#### Dự án trong giai đoạn develop
-
-##### Vai trò của các branch
+### Dự án trong giai đoạn develop
+#### Vai trò của các branch
 1. `master`
     * Luôn ở trạng thái có thể deploy.
     * first commit sẽ là base resource
@@ -74,26 +73,26 @@ Flow tham khảo: [A successful Git branching model](http://nvie.com/posts/a-suc
     * `xxx` là ID issue trên backlog
     * Sau khi làm xong cần tạo 2 pull request và hướng về `master` và `develop` rồi assign cho người review
 
-##### Review
+#### Review
 1. Sau khi code xong và push lên banch thì phải tạo Pull request để review
 2. Sau khi tạo pull request xong thì phải assing pull request đó cho người review (Tất cả các pull request phải được review.)
 3. Sau khi review xong. Nếu có yêu cầu phải sửa thì comment vào và assign ngược lại cho member.
 4. Sau khi review xong. Nếu ok thì merge pull request đó và develop và deploy cho test
 
-##### Deploy lên production (prd)
+#### Deploy lên production (prd)
 1. Sử dụng branch `master` chuyên để deploy lên production.
 2. Sau khi đã phát triển xong thì tạo pull request và hướng về `master` để deploy lên production.
 3. Xác nhận sự thay đổi, nếu không có vấn đề gì thì merge vào `master`. Lưu ý sau khi merge vào master thì tags version release để tiện quản lý
 4. Sau khi merge xong thì deploy lên server prd.
 
-##### Fix lỗi khẩn cấp
+#### Fix lỗi khẩn cấp
 1. Các lỗi này cần phải fix ngay lập tức, thường thì không có thời gian để trải qua đủ các quy trình deploy
 2. Khi hotfix cần làm theo đúng vai trò của branch hotfix
 
 
-#### Dự án trong giai đoạn phase 2nd
+### Dự án trong giai đoạn phase 2nd
 
-##### Vai trò của các branch
+#### Vai trò của các branch
 
 1. `master`
     * Là version mới khi release phase 1st
@@ -119,7 +118,7 @@ Flow tham khảo: [A successful Git branching model](http://nvie.com/posts/a-suc
     * Trong trường hợp phát triển nhiều feature cùng 1 lúc thì có thể tạo nhiều branch `release` giống như feature.
 
 
-#### Khi xảy ra conflict trong quá trình rebase
+### Khi xảy ra conflict trong quá trình rebase
 
 Khi xảy ra conflict trong quá trình rebase, sẽ có hiển thị như dưới đây (tại thời điểm này sẽ bị tự động chuyển về một branch vô danh)
 ```sh
