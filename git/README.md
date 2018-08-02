@@ -3,13 +3,14 @@
 Flow tham khảo: [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)
 
 ## Nguyên tắc
-* Branch master - là branch sẽ release cho khách hàng, deploy production.
+* Branch master - là branch chính sẽ release cho khách hàng, deploy production.
 * Branch develop - là branch chính để phát triển, deploy test.
 * 2 branch master và develop phải config protection 
     1. Require pull request reviews before merging
 * Mỗi pull-request tương ứng với một feature issue.
-* Mỗi một pull-request không hạn chế số lượng commit
-* Pull-request title phải đặt đúng quy định: `[issueType] #[ID issue] [Nội dung issue]` 
+* Mỗi 1 pull request feature thì chỉ có 1 commit code duy nhất
+* Mỗi 1 pull-request fixbug không hạn chế số lượng commit
+* Pull-request title phải đặt đúng quy định: `[issueType] #[ID issue] [Tit issue]` 
 
     （Ví dụ: `bug #WEPAPP-154 Tổng hợp bug trên web`）.
  
@@ -18,8 +19,8 @@ Flow tham khảo: [A successful Git branching model](http://nvie.com/posts/a-suc
         * Ví dụ:
             1. Pull-request title: `bug #WEPAPP-154 Tổng hợp bug trên web`
             2. Trong trường hợp pull-request có 2 commit thì nội dung pull request sẽ tương ứng như sau
-                * `Làm abc xyz`
-                * `fixbug efg tuv `
+                * `[issueType] #[ID issue] [Title issue]`
+                * `[issueType] #[ID issue] [Title issue]`
                 
 * Đối với commit messages phải đặt đúng quy định: `[issueType] #[ID issue] [Nội dung issue]` 
 
@@ -27,7 +28,7 @@ Flow tham khảo: [A successful Git branching model](http://nvie.com/posts/a-suc
 * Tại môi trường local(trên máy lập trình viên), tuyệt đối không được thay đổi code khi ở branch master, develop. Nhất định phải thao tác trên branch khởi tạo để làm task.
 * Trước khi push và tạo pull request bắt buộc phải rebase develop hoặc master để lấy code mới nhất.
 
-    **Cách rebase hiệu quả.**
+    **Cách rebase.**
     1. Đối với trường hợp code xong mà chưa commit  push lên origin
         * Sau khi checkout branch feature mới và code xong rồi thì thực hiện add những file thay đổi vào stash
         * Thực hiện pull develop  rebase `develop` vào branch feature đang phát triển
