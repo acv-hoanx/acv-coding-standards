@@ -81,6 +81,11 @@ Flow tham khảo: [A successful Git branching model](http://nvie.com/posts/a-suc
 4. Sau khi review xong. Nếu ok thì merge pull request đó và develop và deploy cho test
 5. Trước khi tester test chức năng bắt buộc phải review `git log` để đảm bảo log được sạch sẽ, dễ hiểu và pull-request đã được merge
 
+#### Deploy lên môi trường test (develop)
+1. Sử dụng branch `develop` chuyên để deploy lên môi trường test.
+2. Khuyến khí sử dụng tool CI để auto deploy test
+3. Khi merge để test bắt buộc phải tags version để tiện quản lý
+
 #### Deploy lên production (prd)
 1. Sử dụng branch `master` chuyên để deploy lên production.
 2. Sau khi đã phát triển xong thì tạo pull request và hướng về `master` để deploy lên production.
