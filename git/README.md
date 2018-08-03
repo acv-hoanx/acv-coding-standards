@@ -5,6 +5,7 @@ Flow tham khảo: [A successful Git branching model](http://nvie.com/posts/a-suc
 ## Nguyên tắc
 * Branch master - là branch chính sẽ release cho khách hàng, deploy production.
 * Branch develop - là branch chính để phát triển, deploy test.
+* Khi khi release test và produciton bắt buộc phải gắn tags version
 * 2 branch master và develop phải config protection 
     1. Require pull request reviews before merging
 * Mỗi pull-request tương ứng với một feature issue.
