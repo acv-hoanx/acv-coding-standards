@@ -76,9 +76,10 @@ Flow tham khảo: [A successful Git branching model](http://nvie.com/posts/a-suc
 
 #### Review
 1. Sau khi code xong và push lên banch thì phải tạo Pull request để review
-2. Sau khi tạo pull request xong thì phải assing pull request đó cho người review (Tất cả các pull request phải được review.)
+2. Sau khi tạo pull request xong thì phải assign pull request đó cho người review (Tất cả các pull request phải được review.)
 3. Sau khi review xong. Nếu có yêu cầu phải sửa thì comment vào và assign ngược lại cho member.
 4. Sau khi review xong. Nếu ok thì merge pull request đó và develop và deploy cho test
+5. Trước khi tester test chức năng bắt buộc phải review `git log` để đảm bảo log được sạch sẽ, dễ hiểu và pull-request đã được merge
 
 #### Deploy lên production (prd)
 1. Sử dụng branch `master` chuyên để deploy lên production.
